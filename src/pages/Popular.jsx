@@ -61,6 +61,9 @@ export default function Popular() {
                         {/* if headline or abstract is empty/null/undefined - show string instead */}
                         {result.media.map((res) => {
                           console.log(res);
+                          const imgUrl = res.media-metadata.map((mediaData))
+                          console.log(imgUrl);
+                          
                           
                           // const imgUrl = result.multimedia.filter(res => res.format === "threeByTwoSmallAt2X")
                           // if (imgUrl) {
