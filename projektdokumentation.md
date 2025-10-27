@@ -1,8 +1,8 @@
 # Projektdokumentation
 
-**Navn:** 
+**Navn:** Natascha Bjerning
 
-**Hold:** WUxx
+**Hold:** WU14
 
 **Uddannelse:** Webudvikler
 
@@ -14,11 +14,11 @@
 ## Teknologier
 
 -   HTML
--   CSS
+-   SASS
 -   JavaScript
 -   Webpack
--	Jest
--   ...
+-	
+-   
 
 ---
 
@@ -27,6 +27,13 @@
 ### Redegørelse for oprindelsen af evt. tredjeparts kode anvendt i opgaveløsningen (Teknisk dokumentation)
 
 (Hvilke node-pakker har du installeret for at dit projekt virker? Beskriv kort hvilket "problem" hver pakke løser.)
+
+- Vite
+	- beskrivelse af hvad vite gør / hjælper med
+- SASS
+	- beskrivelse af hvad SASS gør / hjælper med
+- react-icons
+	- Jeg har installeret react-icons for at kunne sætte ikoner i navigationen (home, archive, popular, settings) og for at kunne sætte ikoner ved kategorier (pilene til højre for kategorinavne)
 
 ---
 

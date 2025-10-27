@@ -1,0 +1,180 @@
+@use 'variables' as var
+
+/* MARK: Splash Screen */
+.splashscreen
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 95vh
+    &__link
+        text-align: center
+        text-decoration: none
+        font-size: 1.5rem
+        h1
+            font-family: var.$font-headline
+            font-weight: 900
+
+
+/* MARK: Onboarding */
+.onboarding-welcome, .onboarding-discover, .onboarding-enhance
+    display: grid
+    grid-template-rows: 390px auto auto auto
+    justify-items: center
+    align-items: end
+    margin: 4rem 0
+
+    /* MARK: Image */
+    &__image
+        width: 80%
+        margin: 0 auto
+        img
+            height: 390px
+            width: 100%
+
+    /* MARK: Article */
+    &__figcaption
+        text-align: center
+        color: #404040
+        width: 80%
+    
+    &__title
+        margin-top: 1rem
+        justify-self: center
+        font-family: var.$font-headline
+        font-size: 32px
+    
+    &__description
+        margin-top: 2rem
+        font-size: 18px
+
+    /* MARK: Active Dots */
+    &__active-dots
+        margin-top: 3rem
+        display: flex
+        gap: 0.5rem
+        justify-content: center
+    &__dot
+        width: 16px
+        height: 16px
+        border-radius: 25px
+        background-color: #C5C5C5
+        &--active
+            background-color: #4D861F
+            width: 60px
+
+    /* MARK: Buttons */
+    &__buttons
+        margin-top: 3rem
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 1rem
+        font-size: 18px
+        width: 90%
+    &__skip, &__continue
+        width: 100%
+        background-color: white
+        color: #4D861F
+        padding: 1rem 2rem
+        border: 1px solid #4D861F
+        border-radius: 25px
+        font-size: 1rem
+        cursor: pointer
+    &__continue
+        background-color: #4D861F
+        color: white
+
+
+/* MARK: Authentication */
+
+.authentication
+    margin: 4rem 0
+    &__logo
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        img
+            height: 150px
+        
+        h1
+            margin-top: .5rem
+            font-family: var.$font-headline
+            font-weight: 900
+            font-size: 38px
+        p
+            margin-top: 3rem
+            font-size: 16px
+    
+    &__login-buttons
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 1rem
+        margin-top: 4rem
+        width: 100%
+        color: white
+        
+        button
+            width: 80%
+            padding: 1rem 2rem
+            border: 1px solid #C5C5C5
+            border-radius: 25px
+            background-color: #FFFFFF
+            font-size: 16px
+    
+    &__divider
+        position: relative
+
+        hr
+            width: 80%
+            margin: 4rem auto
+            border: none
+            border-top: 1px solid var.$font-color
+        p
+            position: absolute
+            top: -10px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: white
+            padding: 0 1rem
+            font-size: 16px
+
+    &__login-password
+        width: 80%
+        margin: 0 auto
+        button
+            width: 100%
+            background-color: var.$primary-green
+            color: white
+            padding: 1rem 2rem
+            border-radius: 25px
+            border: none
+            font-size: 16px
+            box-shadow: 0px 7px 7px -2px rgba(77, 134, 31,0.5)
+    
+    &__no-account
+        margin-top: 2rem
+        text-align: center
+        font-size: 16px
+        a
+            text-decoration: none
+            color: var.$primary-green
+
+
+/* MARK: Home */
+
+.home-page, .popular-page
+    
+    &__searchbar
+        padding: 0 1.5rem
+        input
+            height: 50px
+            width: 100%
+            padding: 1rem
+            border: 1px solid #000000
+            font-size: 16px
+            background-color: rgba(217, 217, 217, .3)
+
+    &__news
+        margin: 2rem 0 8rem
