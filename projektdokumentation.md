@@ -30,6 +30,8 @@
 
 - Vite
 	- beskrivelse af hvad vite gør / hjælper med
+- React-router
+	- Installerede react-router for nemmere navigation mellem pages
 - SASS
 	- beskrivelse af hvad SASS gør / hjælper med
 - react-icons

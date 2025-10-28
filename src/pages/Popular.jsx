@@ -1,4 +1,4 @@
-import key from "../assets/secret/secret.jsx";
+import key from "../key.jsx";
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation/Navigation.jsx";
 import Header from "../components/Header/Header.jsx";
@@ -20,7 +20,7 @@ export default function Popular() {
             .then(response => response.json())
             .then((data) => {
                 setNewsData(data)
-                console.log(data);
+                // console.log(data);
                 
             });
     }, []);
@@ -42,10 +42,10 @@ export default function Popular() {
           {sectionNames.map((section_name) => {
             // Create array with max 3 elements (headline and abstract) - each element has a section_name that matches section
             const results = newsData && newsData.results
-              ? newsData.results.filter(result => result.section === section_name).slice(0, 3)
+              ? newsData.results.filter(result => result.section === section_name)
               : [];
 
-            // variable to save img url taken from -GET IMG- above
+            // variable to change and save img url below
             let imageUrl
 
             return (
@@ -60,21 +60,17 @@ export default function Popular() {
                       <a key={result.id} id={result.id} href={result.url} target="_blank" className="popular-page__article">
                         {/* if headline or abstract is empty/null/undefined - show string instead */}
                         {result.media.map((res) => {
-                          console.log(res);
-                          const imgUrl = res.media-metadata.map((mediaData))
-                          console.log(imgUrl);
-                          
-                          
-                          // const imgUrl = result.multimedia.filter(res => res.format === "threeByTwoSmallAt2X")
-                          // if (imgUrl) {
-                          //   imageUrl = res.url
-                          // }
-                          // else {
-                          //   imageUrl = {standin}
-                          // }
+                          res["media-metadata"].map((mediaData) => {
+                            const imgUrl = res["media-metadata"].filter(mediaData => mediaData.format === "mediumThreeByTwo210")
+                            if (imgUrl) {
+                              imageUrl = mediaData.url
+                            }
+                            else {
+                              imageUrl = {standin}
+                            }
+                          })
                         })}
                         <img src={imageUrl} alt="article-image" />
-                        {/* <img src={standin} alt="article-image" /> */}
                         <div className="popular-page__article-text">
                           <h3>{result.title || 'No Headline'}</h3>
                           <p>{result.abstract || 'No text'}</p>
