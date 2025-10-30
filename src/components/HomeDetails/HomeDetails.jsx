@@ -4,9 +4,15 @@ import './HomeDetails.sass'
 
 export default function HomeDetails({category, children, ...props}) {
 
+    const handleToggle = event => {
+        const element = event.target
+        const openHeight = element.scrollHeight + "px"
+        element.style.height = element.open ? openHeight : null
+    }
+
     return (
         <>
-            <details {...props} className="home-page__home-details" name="news">
+            <details {...props} onToggle={handleToggle} className="home-page__home-details" name="news">
                 <summary className="home-page__category-title">
                     <img src={logo} alt="newsify_logo" />
                     <h2>{category}</h2>

@@ -1,5 +1,9 @@
 .home-page
 
+    &__home-details
+        height: 63px
+        transition: height 0.5s ease
+        overflow: hidden
     &__home-details:last-of-type
         border-bottom: 1px solid #C5C5C5
 
@@ -30,20 +34,23 @@
 
     &__article
         display: grid
-        grid-template-columns: 70px auto
-        gap: 1rem
-        padding: 1rem 1.5rem
-        border-top: 1px solid #C5C5C5
-        text-decoration: none
-        img
-            height: 70px
-            width: 70px
-            object-fit: cover
-            border-radius: 20px
-        h3
-            font-size: 16px
-            color: #222222
-        p
-            font-size: 14px
-            line-height: 20px
-            color: #222222
+        grid-template-columns: auto 100px
+        a
+            display: grid
+            grid-template-columns: 70px auto
+            gap: 1rem
+            padding: 1rem 1.5rem
+            border-top: 1px solid #C5C5C5
+            text-decoration: none
+            img
+                height: 70px
+                width: 70px
+                object-fit: cover
+                border-radius: 20px
+            h3
+                font-size: 16px
+                color: var(--secondary-text-color)
+            p
+                font-size: 14px
+                line-height: 20px
+                color: var(--secondary-text-color)

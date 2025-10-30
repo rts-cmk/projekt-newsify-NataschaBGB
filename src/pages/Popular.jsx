@@ -1,4 +1,5 @@
 import key from "../key.jsx";
+import useLocalStorage from 'use-local-storage'
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation/Navigation.jsx";
 import Header from "../components/Header/Header.jsx";
@@ -12,6 +13,8 @@ import PopularDetails from "../components/PopularDetails/PopularDetails.jsx";
 export default function Popular() {
 
   const [newsData, setNewsData] = useState([]);
+
+  const [isDark, setIsDark] = useLocalStorage("isDark", false)
 
     const url = `/api/svc/mostpopular/v2/viewed/1.json?api-key=${key}`
 
@@ -35,47 +38,58 @@ export default function Popular() {
     <>
       <Header />
       
-      <main className="popular-page">
+      <main className="popular-page" data-theme={isDark ? "dark" : "light"}>
         
         <section className="popular-page__news">
           {/* loop through all section_names */}
           {sectionNames.map((section_name) => {
-            // Create array with max 3 elements (headline and abstract) - each element has a section_name that matches section
+            // Create array with elements - each element has a section_name that matches section
             const results = newsData && newsData.results
               ? newsData.results.filter(result => result.section === section_name)
               : [];
-
-            // variable to change and save img url below
-            let imageUrl
 
             return (
               // key = helps react identify what element has been updated
               <PopularDetails key={section_name} category={section_name}>
                 <section className="popular-page__articles">
+                  
                   {/* if results array is not empty and elements matches the section above */}
                   {results.length > 0 ? (
                     // loop through the array
                     results.map((result) => (
+                      
                       // key set to _id taken from results objects to identify article
                       <a key={result.id} id={result.id} href={result.url} target="_blank" className="popular-page__article">
-                        {/* if headline or abstract is empty/null/undefined - show string instead */}
-                        {result.media.map((res) => {
-                          res["media-metadata"].map((mediaData) => {
-                            const imgUrl = res["media-metadata"].filter(mediaData => mediaData.format === "mediumThreeByTwo210")
-                            if (imgUrl) {
-                              imageUrl = mediaData.url
+
+                        {/* if media array is not empty */}
+                        {result.media.length > 0 ? (
+                          // loop through media array
+                          result.media.map((mediaData) => {
+                            // if media-metadata array inside media array is not empty
+                            if (mediaData['media-metadata'].length > 0) {
+                              // return img element with src set to img url from array
+                              return (
+                                <img key={mediaData['media-metadata'][0].url} src={mediaData['media-metadata'][0].url} alt="article-image" />
+                              )
                             }
+                            // if media-metadata is empty
                             else {
-                              imageUrl = {standin}
+                              // set img element with default src
+                              <img src="https://lh4.googleusercontent.com/proxy/EWm9FVpPqF7N5rcraSRF-UMDuwBzfkA2tYNH73WwfdaqqrhD7V-TQL22-XP7fOgbjSp4X836b8_TVTYw1JN7bSJuUHbgtMURdiA2n-lyFKYnnpRzFzCJ72kCEw" alt="article-image" />
                             }
+                            
                           })
-                        })}
-                        <img src={imageUrl} alt="article-image" />
+                        // if media is empty
+                        ) : (
+                          // set imageSrc to default image
+                          <img src="https://lh4.googleusercontent.com/proxy/EWm9FVpPqF7N5rcraSRF-UMDuwBzfkA2tYNH73WwfdaqqrhD7V-TQL22-XP7fOgbjSp4X836b8_TVTYw1JN7bSJuUHbgtMURdiA2n-lyFKYnnpRzFzCJ72kCEw" alt="article-image" />
+                        )}
+
+                        {/* if headline or abstract is empty/null/undefined - show string instead */}
                         <div className="popular-page__article-text">
                           <h3>{result.title || 'No Headline'}</h3>
                           <p>{result.abstract || 'No text'}</p>
                         </div>
-                        
                       </a>
                     ))
                   ) : (
