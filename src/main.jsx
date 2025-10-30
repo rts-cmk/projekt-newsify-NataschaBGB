@@ -12,6 +12,7 @@ import Archive from "./pages/Archive.jsx";
 import Popular from "./pages/Popular.jsx";
 import Settings from "./pages/Settings.jsx";
 import './styles/main.sass'
+import './index.css'
 
 
 createRoot(document.getElementById('root')).render(

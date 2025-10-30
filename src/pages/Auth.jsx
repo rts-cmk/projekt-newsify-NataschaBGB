@@ -1,11 +1,14 @@
 import { Link } from "react-router";
 
+import useLocalStorage from 'use-local-storage'
 import newsify_logo from '../assets/newsify_logo.png'
 
 export default function Authentication() {
 
+  const [isDark, setIsDark] = useLocalStorage("isDark", false)
+
   return (
-    <main className="authentication">
+    <main className="authentication" data-theme={isDark ? "dark" : "light"}>
         
         <figure className="authentication__logo">
           <img src={newsify_logo} alt="newsify_logo" className="authentication__image" />

@@ -30,8 +30,10 @@
 
 - Vite
 	- beskrivelse af hvad vite gør / hjælper med
-- SASS
-	- beskrivelse af hvad SASS gør / hjælper med
+- React-router
+	- Installerede react-router for nemmere navigation mellem pages
+- use-local-storage
+	- Gør det lettere at sætte f.eks. dark mode med local storage
 - react-icons
 	- Jeg har installeret react-icons for at kunne sætte ikoner i navigationen (home, archive, popular, settings) og for at kunne sætte ikoner ved kategorier (pilene til højre for kategorinavne)
 
@@ -40,6 +42,10 @@
 ### Argumentation for de valg du selvstændigt har truffet under løsningen af opgaven
 
 (Hvilke overvejelser har du gjort dig, fx. i forbindelse med dit valg af animationer)
+
+- 
+
+- Jeg ville gerne have fundet ud af hvordan jeg kunne have lavet min index.css fil til en sass, som jeg kunne bruge på samme måde til at konvertere til dark mode, men følte ikke, at det var en prioritet.
 
 ---
 ### Vurdering af egen indsats & gennemførelse af opgaveforløbet (Arbejdsgangen)
