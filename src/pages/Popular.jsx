@@ -1,4 +1,3 @@
-import key from "../key.jsx";
 import useLocalStorage from 'use-local-storage'
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation/Navigation.jsx";
@@ -12,17 +11,20 @@ import PopularDetails from "../components/PopularDetails/PopularDetails.jsx";
 
 export default function Popular() {
 
-  const url = `/api/svc/mostpopular/v2/viewed/1.json?api-key=${key}`
+  const API_KEY = import.meta.env.VITE_NYT_API_KEY;
 
-  useEffect(() => {
-      fetch(url)
-          .then(response => response.json())
-          .then((data) => {
-              setNewsData(data)
-              // console.log(data);
-              
-          });
-  }, []);
+    const apiUrl = `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${API_KEY}`
+  
+    useEffect(() => {
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then((data) => {
+          
+          setNewsData(data)
+          // console.log(data)
+  
+        });
+    }, []);
 
   const [newsData, setNewsData] = useState([]);
 
