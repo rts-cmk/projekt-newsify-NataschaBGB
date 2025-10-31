@@ -28,12 +28,10 @@
 
 (Hvilke node-pakker har du installeret for at dit projekt virker? Beskriv kort hvilket "problem" hver pakke løser.)
 
-- Vite
-	- beskrivelse af hvad vite gør / hjælper med
 - React-router
 	- Installerede react-router for nemmere navigation mellem pages
 - use-local-storage
-	- Gør det lettere at sætte f.eks. dark mode med local storage
+	- Gjorde det lettere at sætte dark mode med local storage
 - react-icons
 	- Jeg har installeret react-icons for at kunne sætte ikoner i navigationen (home, archive, popular, settings) og for at kunne sætte ikoner ved kategorier (pilene til højre for kategorinavne)
 
