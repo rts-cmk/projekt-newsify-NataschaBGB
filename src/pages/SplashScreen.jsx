@@ -5,7 +5,7 @@ import newsify_logo from '../assets/newsify_logo.png'
 
 export default function SplashScreen() {
 
-  const [isDark, setIsDark] = useLocalStorage("isDark", false)
+  const [isDark] = useLocalStorage("isDark")
 
   return (
     <main className="splashscreen" data-theme={isDark ? "dark" : "light"}>

@@ -12,21 +12,21 @@ import PopularDetails from "../components/PopularDetails/PopularDetails.jsx";
 
 export default function Popular() {
 
+  const url = `/api/svc/mostpopular/v2/viewed/1.json?api-key=${key}`
+
+  useEffect(() => {
+      fetch(url)
+          .then(response => response.json())
+          .then((data) => {
+              setNewsData(data)
+              // console.log(data);
+              
+          });
+  }, []);
+
   const [newsData, setNewsData] = useState([]);
 
-  const [isDark, setIsDark] = useLocalStorage("isDark", false)
-
-    const url = `/api/svc/mostpopular/v2/viewed/1.json?api-key=${key}`
-
-    useEffect(() => {
-        fetch(url)
-            .then(response => response.json())
-            .then((data) => {
-                setNewsData(data)
-                // console.log(data);
-                
-            });
-    }, []);
+  const [isDark] = useLocalStorage("isDark")
 
   // map() loops through all objects in 'results' and we find all values of 'section_name'
   // create 'new Set' with all unique values found in section_name (no duplicates)
@@ -39,6 +39,8 @@ export default function Popular() {
       <Header />
       
       <main className="popular-page" data-theme={isDark ? "dark" : "light"}>
+
+        <h2 className="popular-page__title">Popular</h2>
         
         <section className="popular-page__news">
           {/* loop through all section_names */}
