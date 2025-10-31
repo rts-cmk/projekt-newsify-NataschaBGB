@@ -1,0 +1,56 @@
+.home-page
+
+    &__home-details
+        height: 63px
+        transition: height 0.5s ease
+        overflow: hidden
+    &__home-details:last-of-type
+        border-bottom: 1px solid #C5C5C5
+
+    &__category-title
+        width: 100%
+        display: grid
+        grid-template-columns: auto 1fr auto
+        gap: 1rem
+        align-items: center
+        text-transform: uppercase
+        padding: 1rem 1.5rem
+        border: 1px solid #C5C5C5
+        border-width: 1px 0 0 0
+        img
+            height: 26px
+        h2
+            // font-family: var.$font-headline
+            font-family: 'Playfair Display', serif
+            font-size: 22px
+        .chevron-down
+            height: 24px
+            transition: transform 0.3s ease
+            transform: rotate(0deg)
+
+    &__home-details[open]
+        .chevron-down
+            transform: rotate(90deg)
+
+    &__article
+        display: grid
+        grid-template-columns: auto 100px
+        a
+            display: grid
+            grid-template-columns: 70px auto
+            gap: 1rem
+            padding: 1rem 1.5rem
+            border-top: 1px solid #C5C5C5
+            text-decoration: none
+            img
+                height: 70px
+                width: 70px
+                object-fit: cover
+                border-radius: 20px
+            h3
+                font-size: 16px
+                color: var(--secondary-text-color)
+            p
+                font-size: 14px
+                line-height: 20px
+                color: var(--secondary-text-color)
