@@ -9,17 +9,17 @@ export default defineConfig({
     outDir: 'docs',
     emptyOutDir: true
   },
-  server: {
-    proxy: {
-      // Any request starting with /api will be proxied
-      '/api': {
-        target: 'https://api.nytimes.com',
-        // Needed for virtual host
-        changeOrigin: true,
-        // Remove /api prefix when sending to targeted sites
-        rewrite: (path) => path.replace(/^\/api/, ''),
-        // Optionally add/remove headers, handle SSL, etc.
-      },
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     // Any request starting with /api will be proxied
+  //     '/api': {
+  //       target: 'https://api.nytimes.com',
+  //       // Needed for virtual host
+  //       changeOrigin: true,
+  //       // Remove /api prefix when sending to targeted sites
+  //       rewrite: (path) => path.replace(/^\/api/, ''),
+  //       // Optionally add/remove headers, handle SSL, etc.
+  //     },
+  //   },
+  // },
 })

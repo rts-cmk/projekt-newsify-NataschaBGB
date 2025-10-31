@@ -8,7 +8,7 @@
 
 **Uddannelsessted:** Roskilde Tekniske Skole
 
-[Link til min applikaton](http://localhost:4173/projekt-newsify-NataschaBGB/)
+[Link til min applikaton](https://rts-cmk.github.io/projekt-newsify-NataschaBGB/)
 
 
 ## Teknologier
