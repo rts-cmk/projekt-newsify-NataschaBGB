@@ -1,4 +1,3 @@
-import key from "../key.jsx";
 import React, { useState, useEffect } from "react";
 import useLocalStorage from 'use-local-storage'
 import Navigation from "../components/Navigation/Navigation.jsx";
@@ -13,7 +12,9 @@ import { useBookmarks } from "../components/UseBookmarks/UseBookmarks.jsx";
 
 export default function Home() {
 
-  const apiUrl = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`
+  const API_KEY = import.meta.env.VITE_NYT_API_KEY;
+  
+  const apiUrl = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`
 
   useEffect(() => {
     fetch(apiUrl)
