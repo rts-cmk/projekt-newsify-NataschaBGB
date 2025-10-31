@@ -13,7 +13,7 @@ import { useBookmarks } from "../components/UseBookmarks/UseBookmarks.jsx";
 
 export default function Home() {
 
-  const apiUrl = `/api/svc/topstories/v2/home.json?api-key=${key}`
+  const apiUrl = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`
 
   useEffect(() => {
     fetch(apiUrl)
