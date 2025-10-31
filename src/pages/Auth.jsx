@@ -5,7 +5,7 @@ import newsify_logo from '../assets/newsify_logo.png'
 
 export default function Authentication() {
 
-  const [isDark, setIsDark] = useLocalStorage("isDark", false)
+  const [isDark] = useLocalStorage("isDark")
 
   return (
     <main className="authentication" data-theme={isDark ? "dark" : "light"}>

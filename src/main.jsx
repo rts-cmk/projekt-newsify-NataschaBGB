@@ -17,7 +17,7 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/projekt-newsify-NataschaBGB">
       <Routes>
         <Route path='/' element={<SplashScreen />} />
         <Route path='/onboarding_welcome' element={<OnboardingWelcome />} />

@@ -1,51 +1,27 @@
 import useLocalStorage from 'use-local-storage'
 import Header from "../components/Header/Header.jsx";
 import Navigation from "../components/Navigation/Navigation.jsx";
-import BookmarkToArchive from '../components/BookmarkToArchive/BookmarkToArchive.jsx';
+import ArchiveDetails from '../components/ArchiveDetails/ArchiveDetails.jsx';
 import '../styles/_layout.sass'
 
 
-// export default function Archive({title, abstract}) {
+export default function Archive() {
 
-//     const [isDark, setIsDark] = useLocalStorage("isDark", false)
+    const [isDark] = useLocalStorage("isDark")
 
-//     return (
-//         <>
-//             <Header />
-//             <main className="archive-page" data-theme={isDark ? "dark" : "light"}>
-                
-//             <h2>Archive</h2>
-//             {title}
-//             {abstract}
+    return (
+      <>
+        <Header />
+        <main className="archive-page" data-theme={isDark ? "dark" : "light"}>
+            
+        <h2 className="archive-page__title">Archive</h2>
 
-//             {/* <BookmarkToArchive>
+        <section className='archive-page__articles'>      
+          <ArchiveDetails />
+        </section>
 
-//             </BookmarkToArchive> */}
-
-                
-//             </main>
-//             <Navigation />
-//         </>
-//     )
-// }
-
-
-import { useLocation } from "react-router";
-
-const Archive = () => {
-  
-  const location = useLocation();
-  console.log(location);
-  
-    const {title} = location.state;
-    console.log(location.state);
-
-
-  return (
-      <div className="work-parent2">
-        <p>{title}</p>
-      </div>
-  );
+        </main>
+        <Navigation />
+      </>
+    )
 }
-
-export default Archive;

@@ -173,9 +173,14 @@
     min-height: 100vh
     width: 100%
     background-color: var(--background-color)
+    &__title
+        text-align: center
+        padding: 1rem 0
+        color: var.$primary-green
+        font-size: 2rem
 
     &__searchbar
-        padding: 1.5rem
+        padding: 0 1rem 1rem
         input
             height: 50px
             width: 100%
@@ -187,15 +192,50 @@
     &__news
         padding: 0 0 8rem
 
+    &__bookmark-button
+        border: none
+        border-top: 1px solid #C5C5C5
+        transition: background-color 0.3s ease, color 0.3s ease
+        cursor: pointer
+        font-size: 2rem
+        svg
+            path
+                color: white
+
+    &__bookmark-button--not-added
+        background-color: var.$primary-green
+
+    &__bookmark-button--not-added:hover
+        background-color: var.$primary-green
+        opacity: .8
+
+    &__bookmark-button--added
+        background-color: var.$primary-green
+        opacity: .6
+        cursor: not-allowed
+
 
 /* MARK: Archive */
 .archive-page
     min-height: 100vh
     width: 100%
     background-color: var(--background-color)
+    h2
+        text-align: center
+        padding: 1rem 0
+        color: var.$primary-green
+        font-size: 2rem
 
 
 .settings-page
     min-height: 100vh
     width: 100%
     background-color: var(--background-color)
+    &__title
+        text-align: center
+        padding: 2rem 0 1rem
+        color: var.$primary-green
+        font-size: 2rem
+    &__subtitle
+        text-align: center
+        padding-bottom: 2rem
